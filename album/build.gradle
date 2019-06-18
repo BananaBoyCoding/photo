@@ -1,0 +1,86 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        javaCompileOptions {
+
+            annotationProcessorOptions {
+
+                arguments = [moduleName: project.getName()]
+
+            }
+
+        }
+
+        manifestPlaceholders = [
+                qq_id: "1103566659"
+        ]
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {//测试环境
+            minifyEnabled false
+            //是否zip对齐
+            zipAlignEnabled true
+            //移除无用的资源文件
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            manifestPlaceholders = [
+//                    GETUI_APP_ID    : "W4UADvxCXp8hbubY6ECjq4",
+//                    GETUI_APP_KEY   : "LCsRSjYVcS9jGKYckJcLO8",
+//                    GETUI_APP_SECRET: "9JWweaQyJK9iGZuxtx1iKA",
+//            ]
+//            resValue("string", "service_user_agent", "HBHBeta")
+        }
+    }
+
+}
+
+//combuild {
+//    applicationName = 'com.jiehun.album.AlbumApplication'
+//    isRegisterCompoAuto = false
+//}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion rootProject.ext.supportLibVersion
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation project(':basiclib')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.dependencies.nineoldandroids
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+//    annotationProcessor rootProject.ext.dependencies.aroutercompiler
+    compileOnly rootProject.ext.dependencies.lombok
+    annotationProcessor rootProject.ext.dependencies.lombok
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation rootProject.ext.dependencies.glide
+    implementation 'com.trello:rxlifecycle:0.8.0'
+    implementation 'com.trello:rxlifecycle-android:0.8.0'
+    implementation 'io.reactivex:rxjava:1.2.3'
+    implementation 'org.projectlombok:lombok:1.16.18'
+    implementation 'com.facebook.rebound:rebound:0.3.8'
+}

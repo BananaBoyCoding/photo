@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryBackground">#efeff4</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+
+    <color name="cl_afafaf">#afafaf</color>
+    <color name="cl_333333">#333333</color>
+    <color name="cl_666666">#666666</color>
+    <color name="cl_2187d2">#2187d2</color>
+
+    <color name="service_cl_ffffff">#ffffff</color>
+    <color name="service_cl_333333">#333333</color>
+    <color name="service_common_line">#eeeeee</color>
+
+    <!--SwipeRefreshLayout背景颜色-->
+    <color name="holo_blue_bright">#ff00ddff</color>
+    <color name="holo_green_light">#ff99cc00</color>
+    <color name="holo_orange_light">#ffffbb33</color>
+    <color name="holo_red_light">#ffff4444</color>
+
+    <color name="versionchecklib_theme_color">#000000</color>
+
+</resources>

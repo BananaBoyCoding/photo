@@ -1,0 +1,70 @@
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        compileOptions {
+
+            sourceCompatibility JavaVersion.VERSION_1_8
+
+            targetCompatibility JavaVersion.VERSION_1_8
+
+        }
+
+    }
+
+    sourceSets {
+        main.java.srcDirs = ['src/main/java', 'src/main/libcache']
+        main.res.srcDirs = ['src/main/res']
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    /** rxjava **/
+    implementation rootProject.ext.dependencies.rxjava
+    // rxandroid
+    //    implementation rootProject.ext.dependencies.rxandroid
+    implementation rootProject.ext.dependencies.appcompat_v7
+    implementation rootProject.ext.dependencies.recyclerview_v7
+    implementation rootProject.ext.dependencies.design
+    //rxlifecycle
+    implementation rootProject.ext.dependencies.rxlifecycle
+    implementation rootProject.ext.dependencies.rxlifecycleandroid
+    implementation rootProject.ext.dependencies.rxpermissions
+    //glide
+    implementation rootProject.ext.dependencies.glide
+    implementation rootProject.ext.dependencies.transformations
+    implementation rootProject.ext.dependencies.bitmappool
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    annotationProcessor rootProject.ext.dependencies.glide_compile
+    //rxretrofit
+    implementation rootProject.ext.dependencies.rxretrofit
+    implementation rootProject.ext.dependencies.rxretrofitgson
+    //okhttp
+    implementation rootProject.ext.dependencies.okhttp
+    implementation rootProject.ext.dependencies.loginterceptor
+    implementation rootProject.ext.dependencies.integration
+    //网络debug跟踪
+    implementation rootProject.ext.dependencies.stetho
+    implementation rootProject.ext.dependencies.stethookhttp3
+    //eventBus
+    implementation rootProject.ext.dependencies.eventbus
+    //butterknife
+    implementation rootProject.ext.dependencies.butterknife
+    //    annotationProcessor rootProject.ext.dependencies.butterknife_compiler
+    //lomok
+    implementation rootProject.ext.dependencies.lombok
+    annotationProcessor rootProject.ext.dependencies.lombok
+    //多dex支持
+    implementation rootProject.ext.dependencies.multidex
+    implementation rootProject.ext.dependencies.annotation_api
+}

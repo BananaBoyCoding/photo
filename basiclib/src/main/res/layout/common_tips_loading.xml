@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/iv_loading_view"
+    android:layout_width="25dp"
+    android:layout_height="25dp"
+    android:layout_gravity="center"
+    android:src="@drawable/common_dialog"
+    android:scaleType="centerInside" />

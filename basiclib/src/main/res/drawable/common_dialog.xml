@@ -1,0 +1,18 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:variablePadding="true"
+    android:oneshot="false">
+
+    <item android:duration="60" android:drawable="@drawable/common_dialog_0"/>
+    <item android:duration="60" android:drawable="@drawable/common_dialog_1"/>
+    <item android:duration="60" android:drawable="@drawable/common_dialog_2"/>
+    <item android:duration="60" android:drawable="@drawable/common_dialog_3"/>
+    <item android:duration="60" android:drawable="@drawable/common_dialog_4"/>
+    <item android:duration="60" android:drawable="@drawable/common_dialog_5"/>
+    <item android:duration="60" android:drawable="@drawable/common_dialog_6"/>
+    <item android:duration="60" android:drawable="@drawable/common_dialog_7"/>
+    <item android:duration="60" android:drawable="@drawable/common_dialog_8"/>
+    <item android:duration="60" android:drawable="@drawable/common_dialog_9"/>
+    <item android:duration="60" android:drawable="@drawable/common_dialog_10"/>
+    <item android:duration="60" android:drawable="@drawable/common_dialog_11"/>
+
+</animation-list>

@@ -1,0 +1,116 @@
+<resources>
+
+    <style name="dialog_transparent" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@color/transparent</item>
+        <!-- 背景透明 -->
+        <!--<item name="android:backgroundDimEnabled">false</item>-->
+        <!-- 模糊 -->
+        <item name="android:layout_height">match_parent</item>
+
+        <item name="android:layout_width">match_parent</item>
+
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
+    <!-- 使用默认的黑暗程度0.6 -->
+    <style name="dim_dialog" parent="Theme.AppCompat.Light.Dialog">
+        //背景波纹颜色
+        <!--<item name="colorControlHighlight">@color/dialog_color</item>-->
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <!-- 无标题，设置的是decorview的背景色 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 默认是有阴影背景的,加以下属性可以改变阴影度阴影 -->
+
+    </style>
+    <!-- 使用默认的黑暗程度0.6 -->
+    <style name="dim08_dialog" parent="dim_dialog">
+        //背景波纹颜色
+        <!--<item name="colorControlHighlight">@color/dialog_color</item>-->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题，设置的是decorview的背景色 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 默认是有阴影背景的,加以下属性可以改变阴影度阴影 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.8</item>
+    </style>
+    <!-- 使用黑暗程度0.3 -->
+    <style name="dim03_dialog" parent="dim_dialog">
+        <!--<item name="colorControlHighlight">@color/dialog_color</item>-->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题，设置的是decorview的背景色 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 默认是有阴影背景的,加以下属性可以改变阴影度阴影 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.3</item>
+    </style>
+
+    <!-- 可以自己调整阴影度 -->
+    <style name="no_dim_dialog" parent="@style/dim_dialog">
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 默认是有阴影背景的,加以下属性可以改变阴影度阴影 -->
+        <item name="android:backgroundDimEnabled">false</item>
+
+        <item name="android:backgroundDimAmount">0</item>
+        <!--<item name="android:windowFullscreen">true</item>-->
+    </style>
+
+    <style name="translate_right_in_out_anim" parent="@android:style/Animation.Translucent">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+
+    </style>
+
+    <style name="fade_in_out_anim" parent="@android:style/Animation.Translucent">
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/no_fade</item>
+        <item name="android:activityCloseEnterAnimation">@anim/no_fade</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out</item>
+
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <style name="translate_bottom_int_out_anim">
+        <item name="android:activityOpenEnterAnimation">@anim/bottom_to_center</item>
+        <item name="android:activityOpenExitAnimation">@anim/no_fade</item>
+        <item name="android:activityCloseEnterAnimation">@anim/no_fade</item>
+        <item name="android:activityCloseExitAnimation">@anim/center_to_bottom</item>
+
+        <item name="android:windowEnterAnimation">@anim/bottom_to_center</item>
+        <item name="android:windowExitAnimation">@anim/center_to_bottom</item>
+    </style>
+    <!--通用标题栏bg-->
+    <declare-styleable name="service_TitleBar">
+        <attr name="service_left_layout" format="reference"/>
+        <attr name="service_title_layout" format="reference"/>
+        <attr name="service_right_layout" format="reference"/>
+    </declare-styleable>
+
+
+    <!-- Base application theme. -->
+    <style name="versioncheckLibAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="versionCheckLibvtransparentTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+
+</resources>
